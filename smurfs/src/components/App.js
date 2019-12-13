@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import SmurfsList from './SmurfsList';
 import SmurfForm from './SmurfForm';
+import Footer from './Footer';
 
 
 class App extends Component {
@@ -11,6 +12,7 @@ class App extends Component {
         <h1>SMURFS!</h1>
         <SmurfsList />
         <SmurfForm />
+        <Footer />
       </div>
     );
   }

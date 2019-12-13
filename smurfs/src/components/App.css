@@ -36,3 +36,10 @@ form {
 .imgContainer img {
   width: 100%;
 }
+
+footer {
+  background-color: rgba(146, 1, 26, 0.8);
+  color: white;
+  margin: 3rem 0 0 0;
+  padding: 1rem;
+}
