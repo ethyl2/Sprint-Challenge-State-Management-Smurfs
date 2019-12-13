@@ -2,6 +2,24 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { deleteSmurf, editSmurf } from '../actions';
 
+import bee from '../images/bee.svg';
+import blossom from '../images/blossom.svg';
+import butterfly from '../images/butterfly.svg';
+import clover from '../images/clover.svg';
+import daffodil from '../images/daffodil.svg';
+import leaves from '../images/leaves.svg';
+import mushroom from '../images/mushroom.svg';
+import rainbow from '../images/rainbow.svg';
+import sun from '../images/sun.svg';
+import sunflower from '../images/sunflower.svg';
+import tree from '../images/tree.svg';
+
+const pickIcon = () => {
+    const icons = [bee, blossom, butterfly, clover, daffodil, leaves, mushroom, rainbow, sun, sunflower, tree];
+    const randomNum = Math.floor(Math.random() * icons.length);
+    return icons[Math.floor(Math.random() * icons.length)];
+}
+
 const Smurf = props => {
     const [editing, setEditing ] = useState(false);
     const [smurfToEdit, setSmurfToEdit] = useState({name: props.smurf.name, age: props.smurf.age, height: props.smurf.height});
@@ -35,6 +53,9 @@ const Smurf = props => {
             <button onClick={handleClick}>X</button>
             <button onClick={startEdit}>{editing? 'Cancel Edit': 'Edit'}</button>
             <h3>{props.smurf.name}</h3>
+            <div className='imgContainer'>
+                <img src={pickIcon()} alt='icon' />
+            </div>
             <p>{props.smurf.age} Years Old</p>
             <p>{props.smurf.height} High</p>
 

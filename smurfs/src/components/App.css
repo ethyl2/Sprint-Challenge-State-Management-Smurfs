@@ -10,7 +10,7 @@
   border-radius: 5px;
   margin: 1rem auto;
   padding: 1rem;
-  width: 45%;
+  width: 32%;
   background: rgba(255,255,255, 0.75);
 }
 
@@ -22,4 +22,17 @@
 
 form {
   background: rgba(64, 188, 231, 0.75);
+}
+
+.imgContainer {
+  width: 4rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.imgContainer img {
+  width: 100%;
 }
