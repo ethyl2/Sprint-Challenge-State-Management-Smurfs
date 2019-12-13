@@ -6,16 +6,19 @@ import Smurf from './Smurf';
 const SmurfsList = props => {
     return (
         <div>
-            <button onClick={props.getSmurfs}>Get Smurfs</button>
+            {!props.smurfs && <button onClick={props.getSmurfs}>Get Smurfs</button>}
+            
             {!props.smurfs && <h3>Go ahead, click for Smurfs!</h3>}
-            {props.error && <p>{props.error}</p>}
-            {props.isFetching && <p>Loading Smurfs...</p>}
             <div className='smurfs-box'>
-            {props.smurfs && props.smurfs.map(smurf => {
-                return (
-                    <Smurf key={smurf.id} smurf={smurf} />
-                )
-                })}
+                {props.error && <p>{props.error}</p>}
+                {props.isFetching && <p>Loading Smurfs...</p>}
+                
+                {props.smurfs && props.smurfs.map(smurf => {
+                    return (
+                        <Smurf key={smurf.id} smurf={smurf} />
+                    )
+                    })
+                }
             </div>
         </div>
     )

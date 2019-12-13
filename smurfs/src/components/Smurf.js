@@ -13,7 +13,7 @@ const Smurf = props => {
 
     const startEdit = e => {
         console.log('Time to edit the smurf of id: ', props.smurf.id);
-        setEditing(true);
+        setEditing(!editing);
     }
 
     const submitForm = e => {
@@ -33,7 +33,7 @@ const Smurf = props => {
     return (
         <div className='smurf-box'>
             <button onClick={handleClick}>X</button>
-            <button onClick={startEdit}>Edit</button>
+            <button onClick={startEdit}>{editing? 'Cancel Edit': 'Edit'}</button>
             <h3>{props.smurf.name}</h3>
             <p>{props.smurf.age} Years Old</p>
             <p>{props.smurf.height} High</p>
