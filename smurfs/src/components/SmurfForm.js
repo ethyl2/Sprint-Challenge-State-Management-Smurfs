@@ -14,9 +14,10 @@ const SmurfForm = props => {
     const submitForm = e => {
         e.preventDefault();
         console.log(smurf);
-        const newSmurf = {...smurf, id: Date.now()}
-        console.log(newSmurf);
-        props.addSmurf(newSmurf);
+        //const newSmurf = {...smurf, id: Date.now()}
+        //console.log(newSmurf);
+        //props.addSmurf(newSmurf);
+        props.addSmurf(smurf);
         setSmurf({name: '', age: 0, height: ''});
     }
 

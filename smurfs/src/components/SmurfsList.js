@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { getSmurfs } from '../actions';
+import Smurf from './Smurf';
 
 const SmurfsList = props => {
     return (
@@ -11,11 +12,7 @@ const SmurfsList = props => {
             {props.isFetching && <p>Loading Smurfs...</p>}
             {props.smurfs && props.smurfs.map(smurf => {
                 return (
-                    <div key={smurf.id}>
-                        <h3>{smurf.name}</h3>
-                        <p>{smurf.age} Years Old</p>
-                        <p>{smurf.height} High</p>
-                    </div>
+                    <Smurf key={smurf.id} smurf={smurf} />
                 )
                 })}
         </div>
