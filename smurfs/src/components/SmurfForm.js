@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-//import { connect } from 'react-redux';
-//import { addSmurf } from '../actions';
+import { connect } from 'react-redux';
+import { addSmurf } from '../actions';
+
 
 const SmurfForm = props => {
     const [smurf, setSmurf] = useState({name: '', age: 0, height: ''});
@@ -15,7 +16,7 @@ const SmurfForm = props => {
         console.log(smurf);
         const newSmurf = {...smurf, id: Date.now()}
         console.log(newSmurf);
-        //props.addSmurf(newSmurf);
+        props.addSmurf(newSmurf);
         setSmurf({name: '', age: 0, height: ''});
     }
 
@@ -56,8 +57,15 @@ const SmurfForm = props => {
             <button type='submit'>Submit Smurf</button>
 
         </form>
+        {props.isPosting && <p>Submitting smurf...</p>}
         </div>
     )
 }
 
-export default SmurfForm;
+const mapStateToProps = state => {
+    return {
+        isPosting: state.isPosting
+    };
+}
+
+export default connect(mapStateToProps, { addSmurf })(SmurfForm);
