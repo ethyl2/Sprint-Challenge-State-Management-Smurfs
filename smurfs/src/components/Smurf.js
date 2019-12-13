@@ -7,9 +7,7 @@ const Smurf = props => {
     const [smurfToEdit, setSmurfToEdit] = useState({name: props.smurf.name, age: props.smurf.age, height: props.smurf.height});
 
     const handleClick = e => {
-        console.log(
-            'Time to delete the smurf of id: ', props.smurf.id
-        );
+        console.log('Time to delete the smurf of id: ', props.smurf.id);
         props.deleteSmurf(props.smurf.id);
     }
 
@@ -26,7 +24,6 @@ const Smurf = props => {
         console.log(smurfToSend);
         props.editSmurf(smurfToSend);
         setEditing(false);
-        //setSmurfToEdit({name: '', age: 0, height: ''});
     }
 
     const handleChanges = e => {
@@ -34,7 +31,7 @@ const Smurf = props => {
     }
 
     return (
-        <div>
+        <div className='smurf-box'>
             <button onClick={handleClick}>X</button>
             <button onClick={startEdit}>Edit</button>
             <h3>{props.smurf.name}</h3>
