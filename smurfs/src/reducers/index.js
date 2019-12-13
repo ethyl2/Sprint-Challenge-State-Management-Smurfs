@@ -16,7 +16,6 @@ import {
     EDIT_SMURF_FAILURE
 } from '../actions'
 
-
 const initialState = {
     smurfs: null,
     error: '',
